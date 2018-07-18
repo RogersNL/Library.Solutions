@@ -1,0 +1,13 @@
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/LibraryTests.deps.json
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/LibraryTests.runtimeconfig.json
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/LibraryTests.runtimeconfig.dev.json
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/obj/Debug/netcoreapp1.1/LibraryTests.AssemblyInfo.cs
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/LibraryTests.dll
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/LibraryTests.pdb
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/Library.dll
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/bin/Debug/netcoreapp1.1/Library.pdb
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/obj/Debug/netcoreapp1.1/LibraryTests.dll
+/Users/Guest/Desktop/Library.Solutions/Library.Tests/obj/Debug/netcoreapp1.1/LibraryTests.pdb
