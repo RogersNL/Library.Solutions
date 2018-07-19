@@ -6,3 +6,12 @@
 /Users/Guest/Desktop/Library.Solutions/Library/obj/Debug/netcoreapp1.1/Library.AssemblyInfo.cs
 /Users/Guest/Desktop/Library.Solutions/Library/obj/Debug/netcoreapp1.1/Library.dll
 /Users/Guest/Desktop/Library.Solutions/Library/obj/Debug/netcoreapp1.1/Library.pdb
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\bin\Debug\netcoreapp1.1\Library.deps.json
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\bin\Debug\netcoreapp1.1\Library.runtimeconfig.json
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\bin\Debug\netcoreapp1.1\Library.runtimeconfig.dev.json
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\bin\Debug\netcoreapp1.1\Library.dll
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\bin\Debug\netcoreapp1.1\Library.pdb
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\obj\Debug\netcoreapp1.1\Library.csproj.CoreCompileInputs.cache
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\obj\Debug\netcoreapp1.1\Library.AssemblyInfo.cs
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\obj\Debug\netcoreapp1.1\Library.dll
+C:\Users\Swati Sahay\Desktop\Library.Solutions\Library\obj\Debug\netcoreapp1.1\Library.pdb
