@@ -73,6 +73,10 @@ namespace Library.Controllers
       Patron selectedPatron = Patron.Find(id);
       List<Book> patronBooks = selectedPatron.GetBooks();
       List<Book> allBooks = Book.GetAllBooks();
+      List<Author> allAuthors = Author.GetAllAuthors();
+      List<Checkout> patronCheckouts = selectedPatron.GetCheckouts();
+      model.Add("patronCheckouts", patronCheckouts);
+      model.Add("allAuthors", allAuthors);
       model.Add("selectedPatron", selectedPatron);
       model.Add("patronBooks", patronBooks);
       model.Add("allBooks", allBooks);

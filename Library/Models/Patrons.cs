@@ -9,6 +9,7 @@ namespace Library.Models
     private int _patronId;
     private string _patronName;
 
+
     public Patron(string PatronName, int PatronId = 0)
     {
       _patronId = PatronId;
@@ -147,6 +148,36 @@ namespace Library.Models
       {
         conn.Dispose();
       }
+    }
+    public List<Checkout> GetCheckouts()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM checkouts WHERE patron_id = @PatronId;";
+
+      cmd.Parameters.Add(new MySqlParameter("@PatronId", _patronId));
+
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      List<Checkout> checkouts = new List<Checkout>{};
+
+      while(rdr.Read())
+      {
+        int checkoutId = rdr.GetInt32(0);
+        int bookId = rdr.GetInt32(1);
+        int patronId = rdr.GetInt32(2);
+        DateTime checkoutDate =  Convert.ToDateTime(rdr.GetDateTime(3).ToString());
+        DateTime dueDate = Convert.ToDateTime(rdr.GetDateTime(4).ToString());
+        bool returned = rdr.GetBoolean(5);
+        Checkout newCheckout = new Checkout(bookId, patronId, checkoutDate, dueDate, returned, checkoutId);
+        checkouts.Add(newCheckout);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return checkouts;
     }
     public List<Book> GetBooks()
     {
