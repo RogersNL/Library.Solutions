@@ -1,0 +1,21 @@
+<h1>List of Books</h1>
+<table>
+  <tr>
+    <th>Book Title</th>
+    <th>Book Copies</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  @foreach(var book in Model)
+  {
+    <tr>
+      <td><a href="/books/@book.GetBookId()">@book.GetTitle()</a></td>
+      <td>@book.GetCopies()</td>
+      <td><a href="/books/@book.GetBookId()/update">Edit</a></td>
+      <td><a href="/books/@book.GetBookId()/delete">Delete</a></td>
+
+    </tr>
+  }
+</table>
+<p><a href="/books/new">Add a New Book</a></p>
+<p><a href="/">Back to Home</a></p>

@@ -23,7 +23,7 @@ namespace Library.Controllers
     [HttpPost("/Books")]
     public ActionResult Create()
     {
-      Book newBook = new Book(Request.Form["updateenrolldate"], int.Parse(Request.Form["updatecoursenumber"]));
+      Book newBook = new Book(Request.Form["newbook"], int.Parse(Request.Form["newcopies"]));
       newBook.Save();
       return RedirectToAction("Success", "Home");
     }
@@ -37,7 +37,7 @@ namespace Library.Controllers
     public ActionResult Update(int id)
     {
       Book thisBook = Book.Find(id);
-      thisBook.Edit(Request.Form["updateenrolldate"], int.Parse(Request.Form["updatecoursenumber"]));
+      thisBook.Edit(Request.Form["updatebook"], int.Parse(Request.Form["updatecopies"]));
       return RedirectToAction("Index");
     }
 
@@ -64,15 +64,19 @@ namespace Library.Controllers
       model.Add("selectedBook", selectedBook);
       model.Add("BookAuthors", BookAuthors);
       model.Add("allAuthors", allAuthors);
+      List<Patron> BookPatrons = selectedBook.GetPatrons();
+      List<Patron> allPatrons = Patron.GetAllPatrons();
+      model.Add("BookPatrons", BookPatrons);
+      model.Add("allPatrons", allPatrons);
       return View(model);
     }
-    // [HttpPost("/Books/{BookId}/books/new")]
-    // public ActionResult AddBook(int BookId)
-    // {
-    //   Book Book= Book.Find(BookId);
-    //   Book book = Book.Find(int.Parse(Request.Form["bookid"]));
-    //   Book.AddBook(book);
-    //   return RedirectToAction("Details",  new { id = BookId });
-    // }
+    [HttpPost("/Books/{BookId}/books/new")]
+    public ActionResult AddBook(int BookId)
+    {
+      Book Book= Book.Find(BookId);
+      Author author = Author.Find(int.Parse(Request.Form["authorid"]));
+      Book.AddAuthor(author);
+      return RedirectToAction("Details",  new { id = BookId });
+    }
   }
 }

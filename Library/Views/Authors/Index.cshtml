@@ -1,0 +1,19 @@
+<h1>List of Authors</h1>
+<table>
+  <tr>
+    <th>Author Name</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  @foreach(var author in Model)
+  {
+    <tr>
+      <td><a href="/authors/@author.GetAuthorId()">@author.GetAuthorName()</a></td>
+      <td><a href="/authors/@author.GetAuthorId()/update">Edit</a></td>
+      <td><a href="/authors/@author.GetAuthorId()/delete">Delete</a></td>
+
+    </tr>
+  }
+</table>
+<p><a href="/authors/new">Add a New Author</a></p>
+<p><a href="/">Back to Home</a></p>

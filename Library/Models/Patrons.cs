@@ -213,5 +213,28 @@ namespace Library.Models
         conn.Close();
       }
     }
+    public static List<Patron> SearchPatrons(string search)
+    {
+      List<Patron> allPatrons = new List<Patron> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM patrons WHERE name LIKE " + search + "%;";
+      var rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        int PatronId = rdr.GetInt32(0);
+        string PatronName = rdr.GetString(1);
+        Patron newPatron = new Patron(PatronName, PatronId);
+        allPatrons.Add(newPatron);
+      }
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+      return allPatrons;
+      // return new List<Patron>{};
+    }
   }
 }

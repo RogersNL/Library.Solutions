@@ -1,0 +1,13 @@
+<h1>Pokemon Patrons</h1>
+<form action="/patrons" method="post">
+  <label for="search">Search Patron:</label>
+  <input id="search" name="search" type="text">
+  <button type="submit">Search</button>
+</form>
+<ul>
+  @foreach(var patron in Model)
+  {
+    <li><a href="/patrons/@patron.GetPatronId()"></a> @patron.GetPatronName()</li>
+  }
+</ul>
+<p><a href="/">Back to Home</a></p>

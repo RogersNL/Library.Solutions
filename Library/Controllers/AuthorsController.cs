@@ -23,7 +23,7 @@ namespace Library.Controllers
     [HttpPost("/authors")]
     public ActionResult Create()
     {
-      Author newAuthor = new Author(Request.Form["newenrolldate"]);
+      Author newAuthor = new Author(Request.Form["newauthor"]);
       newAuthor.Save();
       return RedirectToAction("Success", "Home");
     }
@@ -37,7 +37,7 @@ namespace Library.Controllers
     public ActionResult Update(int id)
     {
       Author thisAuthor = Author.Find(id);
-      thisAuthor.Edit(Request.Form["updateenrolldate"]);
+      thisAuthor.Edit(Request.Form["updateauthor"]);
       return RedirectToAction("Index");
     }
 

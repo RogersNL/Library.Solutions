@@ -1,0 +1,12 @@
+<h1>Add a Book</h1>
+<h2>Add update Book</h2>
+<hr />
+<form action="/books" method="post">
+  <label for="updatebook">Book Name:</label>
+  <input id="updatebook" name="updatebook" type="text" value="@Model.GetTitle()>
+  <label for="updatecopies">Book copies:</label>
+  <input id="updatecopies" name="updatecopies" type="text" value="@Model.GetCopies()>
+  <button type="submit">Add</button>
+</form>
+<h4><a href="/books">List of Books</a></h4>
+<h4><a href="/">Return home</a></h4>

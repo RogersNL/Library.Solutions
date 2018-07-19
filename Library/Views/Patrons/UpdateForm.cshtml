@@ -1,0 +1,9 @@
+<h1>Edit a Patron</h1>
+<hr />
+<form action="/patrons/@Model.GetPatronId()/update" method="post">
+  <label for="updatepatron">Patron Name:</label>
+  <input id="updatepatron" name="updatepatron" type="text" value="@Model.GetPatronName()">
+  <button type="submit">Update</button>
+</form>
+<h4><a href="/patrons">List of Patrons</a></h4>
+<h4><a href="/">Return home</a></h4>

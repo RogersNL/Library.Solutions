@@ -1,0 +1,9 @@
+<h1>Edit a Author</h1>
+<hr />
+<form action="/authors/@Model.GetAuthorId()/update" method="post">
+  <label for="updateauthor">Author Name:</label>
+  <input id="updateauthor" name="updateauthor" type="text" value="@Model.GetAuthorName()">
+  <button type="submit">Update</button>
+</form>
+<h4><a href="/authors">List of Authors</a></h4>
+<h4><a href="/">Return home</a></h4>

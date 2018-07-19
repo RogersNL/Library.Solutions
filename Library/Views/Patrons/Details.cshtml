@@ -1,0 +1,38 @@
+@using Library.Models;
+
+<h1>Patron Information</h1>
+<h2>@Model["selectedPatron"].GetPatronName()</h2>
+<hr />
+@if (@Model["patronBooks"].Count != 0)
+{
+  <h4>This patron has these books:</h4>
+  <table>
+    <tr>
+      <th>Title</th>
+      <th>Author(s)</th>
+      <th># Copies</th>
+      <th>Checkout</th>
+    </tr>
+    @foreach (var patron in @Model["patronBooks"])
+    {
+      <tr>
+        <td>@patron.GetTitle()</td>
+        <td>@patron.GetAuthor()</td>
+        <td>@patron.GetCopies()</td>
+        <td>checkout</td>
+      </tr>
+    }
+  </table>
+}
+<h4>Add a book for this patron:</h4>
+<form action='/patrons/@Model["selectedPatron"].GetPatronId()/books/new' method='post'>
+  <label for='bookid'>Select a book</label>
+  <select id='bookid' name='bookid' type='text'>
+    @foreach (var book in @Model["allBooks"])
+    {
+      <option value='@book.GetBookId()'>@book.GetTitle()</option>
+    }
+  </select>
+  <button type='submit'>Add</button>
+</form>
+<p><a href="/">Return to Main Page</a></p>

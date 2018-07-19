@@ -8,6 +8,7 @@ namespace Library.Controllers
   public class PatronsController : Controller
   {
 
+
     [HttpGet("/patrons")]
     public ActionResult Index()
     {
@@ -23,7 +24,7 @@ namespace Library.Controllers
     [HttpPost("/patrons")]
     public ActionResult Create()
     {
-      Patron newPatron = new Patron(Request.Form["newenrolldate"]);
+      Patron newPatron = new Patron(Request.Form["newpatron"]);
       newPatron.Save();
       return RedirectToAction("Success", "Home");
     }
@@ -37,8 +38,19 @@ namespace Library.Controllers
     public ActionResult Update(int id)
     {
       Patron thisPatron = Patron.Find(id);
-      thisPatron.Edit(Request.Form["updateenrolldate"]);
+      thisPatron.Edit(Request.Form["updatepatron"]);
       return RedirectToAction("Index");
+    }
+    [HttpGet("/patrons/search")]
+    public ActionResult Patrons()
+    {
+      List<Patron> emptyList = new List<Patron>{};
+      return View(emptyList);
+    }
+    [HttpPost("/patrons/search")]
+    public ActionResult PatronSearch()
+    {
+       return View("Index",Patron.SearchPatrons(Request.Form["search"]));
     }
 
     [HttpGet("/patrons/{id}/delete")]
@@ -70,7 +82,7 @@ namespace Library.Controllers
     public ActionResult AddBook(int patronId)
     {
       Patron patron= Patron.Find(patronId);
-      Book book = Book.Find(int.Parse(Request.Form["bookid"]), Convert.ToDateTime(Request.Form["checkoutdate"]), Convert.ToDateTime(Request.Form["duedate"]));
+      Book book = Book.Find(int.Parse(Request.Form["bookid"]));
       patron.AddBook(book);
       return RedirectToAction("Details",  new { id = patronId });
     }

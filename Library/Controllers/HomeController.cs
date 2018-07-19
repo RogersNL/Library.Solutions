@@ -16,5 +16,12 @@ namespace Library.Controllers
         {
           return View();
         }
+        [HttpGet("/librarian")]
+        public ActionResult Librarian()
+        {
+            return View();
+            // return new EmptyResult();
+        }
+    
     }
 }

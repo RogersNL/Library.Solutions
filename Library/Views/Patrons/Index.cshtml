@@ -1,0 +1,19 @@
+<h1>List of Patrons</h1>
+<table>
+  <tr>
+    <th>Patron Name</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  @foreach(var patron in Model)
+  {
+    <tr>
+      <td><a href="/patrons/@patron.GetPatronId()">@patron.GetPatronName()</a></td>
+      <td><a href="/patrons/@patron.GetPatronId()/update">Edit</a></td>
+      <td><a href="/patrons/@patron.GetPatronId()/delete">Delete</a></td>
+
+    </tr>
+  }
+</table>
+<p><a href="/patrons/new">Add a New Patron</a></p>
+<p><a href="/">Back to Home</a></p>
